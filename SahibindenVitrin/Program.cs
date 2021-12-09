@@ -27,12 +27,11 @@ namespace SahibindenVitrin
                 link.ToList().ForEach(i => detayLink = (i.OuterHtml.Substring(9, last - 10)));
                 Console.WriteLine(j+". ilan");
                 Details(sahibindenLink + detayLink);
-            }
-                    
-
+                System.Threading.Thread.Sleep(10000);
+            }      
         }
         private static void Details(String url)
-        {
+        {   
             HtmlWeb web = new HtmlWeb();
             HtmlDocument document = web.Load(url);
 
@@ -41,9 +40,9 @@ namespace SahibindenVitrin
             var link = url;
 
             Console.WriteLine(title);
-            Console.WriteLine(price.Trim()) ;
+            Console.WriteLine(price.Trim());
             Console.WriteLine(url);
-            Console.WriteLine("");
+            Console.WriteLine(""); 
         }
     }
 }
