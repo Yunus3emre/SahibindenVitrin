@@ -7,9 +7,12 @@ namespace SahibindenVitrin
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            Entrence();
             Sahibinden();            
         }
+
+       
 
         private static void Sahibinden()
         {
@@ -24,8 +27,7 @@ namespace SahibindenVitrin
                 System.Threading.Thread.Sleep(30000);
                 var link = document.DocumentNode.SelectNodes("//*[@id=\"container\"]/div[3]/div/div[3]/div[3]/ul/li["+j+"]/a");
                 int last = 0;
-                Console.WriteLine("");                
-                //link.ToList().ForEach(i => Console.WriteLine(i.OuterHtml));
+                Console.WriteLine("");    
                 Console.WriteLine("");
                 link.ToList().ForEach(i => last = (i.OuterHtml.IndexOf(" title=")));
 
@@ -72,6 +74,13 @@ namespace SahibindenVitrin
 
 
             
+        }
+        private static void Entrence()
+        {            
+            Console.WriteLine("---Sahibinden Vitrin Listeleme--- ");
+            Console.WriteLine(" ");
+            Console.WriteLine("İlanların listelenmesi için lütfen 30 saniye bekleyiniz...");
+
         }
     }
 }
